@@ -1,1 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PureSpace Cleaning Co. offers thoughtful residential and commercial cleaning services. Request a personalized cleaning quote today.">
+<title>PureSpace Cleaning Co. | A Fresh Start</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+--green: #284d40;
+--green-dark: #19372e;
+--sage: #dce7db;
+--cream: #f7f6f0;
+--white: #fffefa;
+--text: #263d34;
+--muted: #718078;
+--gold: #c5a16b;
+}
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 95px; }
+body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); line-height: 1.65; }
+a { text-decoration: none; color: inherit; }
+img { display: block; width: 100%; object-fit: cover; }
+button, input, select, textarea { font: inherit; }
+.container { width: min(1160px, 90%); margin: auto; }
+
+.announcement { background: var(--green-dark); color: #f4f5ef; padding: 9px 15px; text-align: center; font-size: 11px; letter-spacing: .7px; }
+header { position: sticky; top: 0; z-index: 20; background: #fffefaed; backdrop-filter: blur(15px); border-bottom: 1px solid #e8e9e1; }
+.nav { min-height: 83px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+.brand { display: flex; align-items: center; gap: 11px; font-family: Manrope, sans-serif; font-weight: 800; font-size: 18px; letter-spacing: -.6px; line-height: 1.15; }
+.brand-mark { width: 43px; height: 43px; display: grid; place-items: center; background: var(--sage); border-radius: 50% 50% 50% 8px; font-size: 23px; color: var(--green); }
+.brand small { display: block; font-size: 9px; letter-spacing: 3px; font-weight: 600; margin-top: 5px; }
+.nav-links { display: flex; align-items: center; gap: 27px; font-size: 12px; font-weight: 600; }
+.nav-links a:hover { color: #78937e; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid transparent; padding: 14px 22px; font-size: 12px; font-weight: 700; cursor: pointer; transition: .25s; }
+.btn-green { background: var(--green); color: white; }
+.btn-green:hover { background: var(--green-dark); transform: translateY(-2px); }
+.btn-light { background: var(--white); color: var(--green); border-color: #e2e5dc; }
+.btn-light:hover { background: var(--sage); }
+.menu-toggle { display: none; border: 0; background: transparent; font-size: 26px; cursor: pointer; color: var(--green); }
+
+.hero { background: var(--cream); padding: 65px 0 70px; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.eyebrow { display: flex; align-items: center; gap: 10px; color: #718a72; font-size: 10px; letter-spacing: 2.5px; font-weight: 700; text-transform: uppercase; }
+.eyebrow:before { content: ''; width: 25px; height: 1px; background: var(--gold); }
+h1,h2,h3 { font-family: Manrope, sans-serif; line-height: 1.2; }
+h1 { font-size: clamp(43px, 5.2vw, 68px); letter-spacing: -3px; font-weight: 600; margin: 23px 0; }
+h1 em { font-family: Georgia, serif; font-weight: 400; color: #77927b; }
+.hero-copy > p { font-size: 14px; line-height: 1.95; color: var(--muted); max-width: 455px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.hero-note { display: flex; align-items: center; gap: 9px; margin-top: 28px; font-size: 11px; color: var(--muted); }
+.stars { color: var(--gold); letter-spacing: 2px; }
+.hero-visual { position: relative; min-height: 470px; }
+.hero-image { position: absolute; inset: 0 0 25px 35px; width: calc(100% - 35px); height: calc(100% - 25px); border-radius: 48% 48% 4px 4px; }
+.floating-card { position: absolute; left: 0; bottom: 0; background: white; padding: 20px 23px; box-shadow: 0 12px 40px #263d3415; display: flex; gap: 13px; align-items: center; max-width: 255px; }
+.floating-icon { background: var(--sage); width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-size: 19px; flex-shrink: 0; }
+.floating-card strong { display: block; font: 700 12px Manrope,sans-serif; }
+.floating-card small { color: var(--muted); font-size: 10px; }
+
+.benefit-strip { border-top: 1px solid #ebebe5; border-bottom: 1px solid #ebebe5; }
+.benefit-grid { display: grid; grid-template-columns: repeat(3,1fr); }
+.benefit-item { padding: 23px 16px; display: flex; justify-content: center; align-items: center; gap: 12px; border-right: 1px solid #ebebe5; }
+.benefit-item:last-child { border: 0; }
+.benefit-item span { font-size: 21px; }
+.benefit-item strong { display: block; font: 700 12px Manrope,sans-serif; }
+.benefit-item small { color: var(--muted); font-size: 10px; }
+
+section { padding: 95px 0; }
+.section-heading { max-width: 650px; margin-bottom: 42px; }
+.section-heading h2 { font-size: clamp(31px,4vw,46px); letter-spacing: -1.7px; margin: 17px 0 14px; font-weight: 600; }
+.section-heading p { color: var(--muted); font-size: 13px; line-height: 1.9; }
+.center { text-align: center; margin-left: auto; margin-right: auto; }
+.center .eyebrow { justify-content: center; }
+
+.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.service-card { border: 1px solid #e9eae3; background: white; }
+.service-image-wrap { position: relative; overflow: hidden; }
+.service-image-wrap img { height: 235px; transition: transform .5s; }
+.service-card:hover img { transform: scale(1.04); }
+.service-tag { position: absolute; left: 15px; top: 15px; padding: 7px 11px; background: #fffefaed; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
+.service-content { padding: 25px; }
+.service-content h3 { font-size: 19px; margin-bottom: 10px; }
+.service-content p { font-size: 12px; color: var(--muted); line-height: 1.9; margin-bottom: 17px; }
+.service-link { font-size: 11px; font-weight: 700; }
+.service-link span { color: #79947d; margin-left: 5px; }
+
+.about { background: var(--cream); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-visual { position: relative; padding: 0 25px 25px 0; }
+.about-visual img { height: 475px; }
+.about-visual:after { content: ''; position: absolute; right: 0; bottom: 0; width: 65%; height: 60%; border: 1px solid #c8d6c5; z-index: 0; }
+.about-visual img { position: relative; z-index: 1; }
+.about-copy { position: relative; z-index: 2; }
+.about-copy h2 { font-size: clamp(32px,4vw,45px); letter-spacing: -1.5px; font-weight: 600; margin: 17px 0; }
+.about-copy > p { color: var(--muted); font-size: 13px; line-height: 2; }
+.check-list { list-style: none; display: grid; gap: 15px; margin: 27px 0 30px; }
+.check-list li { display: flex; gap: 12px; font-size: 12px; align-items: flex-start; }
+.check-list li:before { content: '✓'; display: grid; place-items: center; background: #e1e9dc; color: var(--green); border-radius: 50%; width: 22px; height: 22px; flex-shrink: 0; font-weight: 800; }
+
+.packages { background: var(--green); color: white; }
+.packages .section-heading p { color: #d2ded4; }
+.packages .eyebrow { color: #d7dfd0; }
+.packages-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; align-items: stretch; }
+.package { padding: 31px 27px; background: #ffffff0a; border: 1px solid #ffffff30; display: flex; flex-direction: column; }
+.package.featured { background: var(--cream); color: var(--green); border-color: var(--cream); }
+.package-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #b8c9b5; font-weight: 700; }
+.featured .package-label { color: #7e967b; }
+.package h3 { font-size: 22px; margin: 13px 0 10px; }
+.package > p { font-size: 12px; opacity: .8; min-height: 58px; }
+.package ul { list-style: none; margin: 24px 0; display: grid; gap: 12px; flex: 1; }
+.package li { font-size: 11px; }
+.package li:before { content: '✓'; color: var(--gold); margin-right: 10px; }
+.package .btn { width: 100%; }
+.package .btn-outline { border-color: #ffffff70; color: white; }
+.package.featured .btn-outline { border-color: var(--green); color: var(--green); }
+.package-note { font-size: 10px; text-align: center; color: #d2ded4; margin-top: 25px; }
+
+.difference-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; }
+.difference-image { height: 400px; }
+.difference-copy h2 { font-size: clamp(31px,4vw,43px); letter-spacing: -1.5px; margin: 15px 0; }
+.difference-copy > p { color: var(--muted); font-size: 13px; line-height: 1.9; }
+.difference-points { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 28px; }
+.difference-points strong { font: 700 13px Manrope,sans-serif; display: block; margin-bottom: 7px; }
+.difference-points p { font-size: 11px; color: var(--muted); }
+
+.faq { background: var(--cream); }
+.faq-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 65px; }
+.faq-grid .section-heading { margin-bottom: 0; }
+.faq-list { border-top: 1px solid #dfe2d9; }
+details { border-bottom: 1px solid #dfe2d9; padding: 20px 0; }
+summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 15px; font: 700 13px Manrope,sans-serif; }
+summary::-webkit-details-marker { display: none; }
+summary:after { content: '+'; color: #78937c; font-size: 19px; line-height: 1; }
+details[open] summary:after { content: '−'; }
+details p { font-size: 12px; line-height: 1.9; color: var(--muted); padding-top: 13px; }
+
+.contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 65px; }
+.contact-copy h2 { font-size: clamp(32px,4vw,45px); letter-spacing: -1.5px; margin: 17px 0; }
+.contact-copy > p { color: var(--muted); font-size: 13px; line-height: 1.9; }
+.contact-point { border-top: 1px solid #e5e8df; padding-top: 17px; margin-top: 24px; }
+.contact-point strong { display: block; font: 700 12px Manrope,sans-serif; margin-bottom: 5px; }
+.contact-point span { color: var(--muted); font-size: 12px; }
+.booking-form { padding: 34px; background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field.full { grid-column: 1/-1; }
+.field label { font-size: 11px; font-weight: 700; }
+.field input,.field select,.field textarea { width: 100%; background: white; border: 1px solid #dfe3da; padding: 13px; border-radius: 0; outline: none; color: var(--text); font-size: 12px; }
+.field input:focus,.field select:focus,.field textarea:focus { border-color: #819a80; }
+.field textarea { min-height: 110px; resize: vertical; }
+.booking-form .btn,.form-note,.form-status { grid-column: 1/-1; }
+.booking-form .btn { justify-self: start; }
+.form-note { color: var(--muted); font-size: 10px; }
+.form-status { font-size: 12px; font-weight: 600; }
+
+.final-cta { padding: 55px 0; background: var(--sage); }
+.final-cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+.final-cta h2 { font-size: clamp(25px,3.5vw,37px); letter-spacing: -1px; }
+.final-cta p { color: #5e7565; font-size: 12px; margin-top: 8px; }
+
+footer { background: var(--green-dark); color: white; padding: 50px 0 23px; }
+footer .brand-mark { background: #dce7db; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 45px; padding-bottom: 36px; }
+.footer-about p { color: #c0cec5; font-size: 11px; line-height: 1.9; margin-top: 16px; max-width: 310px; }
+footer h4 { font: 700 12px Manrope,sans-serif; margin-bottom: 17px; }
+.footer-links { display: grid; gap: 10px; }
+.footer-links a { color: #c0cec5; font-size: 11px; }
+.footer-links a:hover { color: white; }
+.copyright { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; padding-top: 20px; border-top: 1px solid #ffffff25; font-size: 10px; color: #b5c4bb; }
+
+@media(max-width:850px) {
+.nav-links { display: none; position: absolute; top: 83px; left: 0; right: 0; background: var(--white); padding: 25px 5%; flex-direction: column; align-items: stretch; gap: 20px; box-shadow: 0 10px 20px #19372e15; }
+.nav-links.open { display: flex; }
+.menu-toggle { display: block; }
+.nav > .btn { display: none; }
+.hero-grid { gap: 30px; }
+.hero-visual { min-height: 400px; }
+.services-grid,.packages-grid { grid-template-columns: 1fr 1fr; }
+.about-grid { gap: 40px; }
+.difference-grid { gap: 30px; }
+.faq-grid { grid-template-columns: 1fr; gap: 30px; }
+.contact-grid { gap: 35px; }
+}
+@media(max-width:560px) {
+.hero { padding: 45px 0 55px; }
+.hero-grid,.about-grid,.difference-grid,.contact-grid { grid-template-columns: 1fr; }
+.hero-visual { min-height: 350px; margin-top: 10px; }
+h1 { letter-spacing: -2px; }
+section { padding: 68px 0; }
+.benefit-grid { grid-template-columns: 1fr; }
+.benefit-item { justify-content: flex-start; border-right: 0; border-bottom: 1px solid #ebebe5; padding: 17px 0; }
+.services-grid,.packages-grid { grid-template-columns: 1fr; }
+.service-image-wrap img { height: 230px; }
+.about-visual img { height: 340px; }
+.difference-image { height: 290px; }
+.difference-points { gap: 18px; }
+.booking-form { grid-template-columns: 1fr; padding: 23px; }
+.field.full,.booking-form .btn,.form-note,.form-status { grid-column: 1; }
+.final-cta-inner { align-items: flex-start; flex-direction: column; }
+.footer-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+</style>
+</head>
+<body>
+<div class="announcement">A little more calm. A little more clean. A space that feels like you.</div>
+
+<header>
+<div class="container nav">
+<a class="brand" href="#home">
+<span class="brand-mark">✳</span>
+<span>PureSpace<small>CLEANING CO.</small></span>
+</a>
+<nav class="nav-links" id="navLinks">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#about">Our Approach</a>
+<a href="#packages">Packages</a>
+<a href="#faq">FAQs</a>
+</nav>
+<a class="btn btn-green" href="#contact">Request a Quote ↗</a>
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div class="hero-copy">
+<div class="eyebrow">A breath of fresh space</div>
+<h1>Come home to<br>a little more <em>calm.</em></h1>
+<p>Thoughtful cleaning for the spaces where life happens. From everyday upkeep to a fresh start, we help make room for the things that matter most.</p>
+<div class="hero-actions">
+<a class="btn btn-green" href="#contact">Get a Cleaning Quote ↗</a>
+<a class="btn btn-light" href="#services">Explore Services</a>
+</div>
+<div class="hero-note"><span class="stars">★★★★★</span><span>Considered care for your space</span></div>
+</div>
+<div class="hero-visual">
+<img class="hero-image" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="Bright, serene living room with neutral decor">
+<div class="floating-card"><div class="floating-icon">✳</div><div><strong>A fresh-space feeling</strong><small>Thoughtful care, room by room</small></div></div>
+</div>
+</div>
+</section>
+
+<div class="benefit-strip">
+<div class="container benefit-grid">
+<div class="benefit-item"><span>⌂</span><div><strong>Residential Cleaning</strong><small>Everyday comfort at home</small></div></div>
+<div class="benefit-item"><span>✧</span><div><strong>Deep Cleaning</strong><small>Extra attention to the details</small></div></div>
+<div class="benefit-item"><span>▧</span><div><strong>Commercial Cleaning</strong><small>Fresh, welcoming workspaces</small></div></div>
+</div>
+</div>
+
+<section id="services">
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">What we can take off your list</div>
+<h2>A cleaner space, your way.</h2>
+<p>Choose the kind of care that suits your home, your schedule, and the way you use your space.</p>
+</div>
+<div class="services-grid">
+<article class="service-card">
+<div class="service-image-wrap"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=850&q=85" alt="Home cleaning supplies arranged neatly" loading="lazy"><span class="service-tag">Everyday care</span></div>
+<div class="service-content"><h3>Regular Home Cleaning</h3><p>Keep on top of everyday dust, surfaces, floors, and the little details that make a home feel refreshed.</p><a class="service-link" href="#contact">Find your routine <span>↗</span></a></div>
+</article>
+<article class="service-card">
+<div class="service-image-wrap"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=850&q=85" alt="Beautiful clean contemporary home interior" loading="lazy"><span class="service-tag">A fresh start</span></div>
+<div class="service-content"><h3>Deep Cleaning</h3><p>For spaces that need a little extra attention, with more time dedicated to built-up dirt and overlooked areas.</p><a class="service-link" href="#contact">Plan a deep clean <span>↗</span></a></div>
+</article>
+<article class="service-card">
+<div class="service-image-wrap"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=850&q=85" alt="Elegant, bright interior ready to enjoy" loading="lazy"><span class="service-tag">Life in transition</span></div>
+<div class="service-content"><h3>Move-In & Move-Out</h3><p>Prepare a space for its next chapter with a detailed clean tailored to the property's needs.</p><a class="service-link" href="#contact">Plan your move <span>↗</span></a></div>
+</article>
+<article class="service-card">
+<div class="service-image-wrap"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=850&q=85" alt="Minimal, tidy living area" loading="lazy"><span class="service-tag">Workspaces</span></div>
+<div class="service-content"><h3>Office Cleaning</h3><p>Help maintain a tidy, welcoming workspace for your team and the people who visit.</p><a class="service-link" href="#contact">Discuss your office <span>↗</span></a></div>
+</article>
+<article class="service-card">
+<div class="service-image-wrap"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=850&q=85" alt="Fresh and orderly modern kitchen" loading="lazy"><span class="service-tag">Detail focused</span></div>
+<div class="service-content"><h3>Kitchen & Bathroom</h3><p>Focused attention on the hardworking rooms that often need the most care and time.</p><a class="service-link" href="#contact">Ask about details <span>↗</span></a></div>
+</article>
+<article class="service-card">
+<div class="service-image-wrap"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=850&q=85" alt="Warm and inviting living room" loading="lazy"><span class="service-tag">Made for you</span></div>
+<div class="service-content"><h3>Custom Cleaning</h3><p>Have a particular room, schedule, or priority in mind? Tell us what matters and we can discuss a plan.</p><a class="service-link" href="#contact">Build your request <span>↗</span></a></div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="container about-grid">
+<div class="about-visual">
+<img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1000&q=85" alt="Serene home interior with natural light" loading="lazy">
+</div>
+<div class="about-copy">
+<div class="eyebrow">Our approach</div>
+<h2>Care you can feel in every corner.</h2>
+<p>Cleaning is about more than what you see. It's about walking into your space and feeling a little lighter. Our approach starts with listening to what you need and giving those details the attention they deserve.</p>
+<ul class="check-list">
+<li><span><strong>Thoughtful planning.</strong> A service shaped around your priorities.</span></li>
+<li><span><strong>Attention to detail.</strong> Careful work, including the finishing touches.</span></li>
+<li><span><strong>Clear communication.</strong> Straightforward conversations about the scope.</span></li>
+<li><span><strong>Respect for your space.</strong> A considered approach to your home or workplace.</span></li>
+</ul>
+<a href="#contact" class="btn btn-green">Let's Talk About Your Space ↗</a>
+</div>
+</div>
+</section>
+
+<section class="packages" id="packages">
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">Find your kind of clean</div>
+<h2>Simple starting points.</h2>
+<p>Explore these sample service levels, then tell us about your space so a real cleaning business can prepare an appropriate quote.</p>
+</div>
+<div class="packages-grid">
+<article class="package">
+<div class="package-label">01 / Keep it fresh</div>
+<h3>Essential</h3>
+<p>For regular upkeep and a more comfortable everyday space.</p>
+<ul><li>General surface cleaning</li><li>Floors and visible dust</li><li>Kitchen exterior surfaces</li><li>Bathroom refresh</li><li>Flexible scheduling enquiry</li></ul>
+<a class="btn btn-outline" href="#contact">Request a Quote ↗</a>
+</article>
+<article class="package featured">
+<div class="package-label">02 / Extra attention</div>
+<h3>Deep Refresh</h3>
+<p>For a more detailed clean or when your space needs a reset.</p>
+<ul><li>Everything in Essential, as applicable</li><li>Extra detail on selected areas</li><li>Additional time for buildup</li><li>Priority areas discussed in advance</li><li>Scope tailored to your property</li></ul>
+<a class="btn btn-green" href="#contact">Choose Deep Refresh ↗</a>
+</article>
+<article class="package">
+<div class="package-label">03 / Your own plan</div>
+<h3>Custom Care</h3>
+<p>For move-outs, workplaces, and individual cleaning needs.</p>
+<ul><li>Personalized service discussion</li><li>Property-specific requirements</li><li>Move-related cleaning enquiries</li><li>Office cleaning enquiries</li><li>Custom scope and schedule</li></ul>
+<a class="btn btn-outline" href="#contact">Build My Request ↗</a>
+</article>
+</div>
+<p class="package-note">Service levels are illustrative. Scope, availability, and pricing must be confirmed by the actual service provider.</p>
+</div>
+</section>
+
+<section id="difference">
+<div class="container difference-grid">
+<img class="difference-image" src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=1000&q=85" alt="Calm, organized interior with soft natural light" loading="lazy">
+<div class="difference-copy">
+<div class="eyebrow">The PureSpace feeling</div>
+<h2>More time for the life you live.</h2>
+<p>A little help with your space can make room for a slower morning, a welcoming guest, or simply an evening where your to-do list feels lighter.</p>
+<div class="difference-points">
+<div><strong>Less to manage</strong><p>Put your cleaning priorities into words and start with a clear plan.</p></div>
+<div><strong>A space to enjoy</strong><p>Choose the rooms and tasks that make the biggest difference to you.</p></div>
+<div><strong>Flexible options</strong><p>Explore recurring or one-time service possibilities.</p></div>
+<div><strong>Clear expectations</strong><p>Discuss what's included before agreeing to the work.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="faq" id="faq">
+<div class="container faq-grid">
+<div class="section-heading">
+<div class="eyebrow">Good to know</div>
+<h2>A few things you might be wondering.</h2>
+<p>Have a question that isn't covered here? Send us a note through the enquiry form.</p>
+</div>
+<div class="faq-list">
+<details><summary>How do I get a cleaning quote?</summary><p>Complete the enquiry form with your service type, property details, and priorities. A real business would follow up to clarify the scope and provide a quote.</p></details>
+<details><summary>Do you offer one-time and recurring cleans?</summary><p>This demo presents both as potential options. The actual provider should confirm its available schedules and recurring service options.</p></details>
+<details><summary>What is included in a deep clean?</summary><p>Deep cleaning typically involves additional attention to selected areas beyond routine upkeep. Exact tasks should be agreed in advance based on the property's condition and service package.</p></details>
+<details><summary>Do I need to supply cleaning products?</summary><p>Product and equipment arrangements vary by provider. Ask about supplies when requesting your quote so expectations are clear.</p></details>
+<details><summary>Which areas do you serve?</summary><p>The business's real service area has not yet been configured. Add the correct cities and neighbourhoods before publishing this website for a real client.</p></details>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container contact-grid">
+<div class="contact-copy">
+<div class="eyebrow">Your fresh start begins here</div>
+<h2>Let's make room for a cleaner day.</h2>
+<p>Tell us a little about your home or workplace. We'll use your answers to prepare a clear enquiry that you can send to the business.</p>
+<div class="contact-point"><strong>01. Choose your service</strong><span>Regular cleaning, deep cleaning, moving, or commercial.</span></div>
+<div class="contact-point"><strong>02. Share your priorities</strong><span>Tell us about your space, schedule, and preferred tasks.</span></div>
+<div class="contact-point"><strong>03. Discuss your quote</strong><span>Confirm the scope, price, and availability directly with the provider.</span></div>
+</div>
+<form class="booking-form" id="bookingForm">
+<div class="field"><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" required placeholder="Full name"></div>
+<div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+<div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Optional"></div>
+<div class="field"><label for="service">Cleaning service *</label><select id="service" name="service" required><option value="">Select a service</option><option>Regular home cleaning</option><option>Deep cleaning</option><option>Move-in / move-out</option><option>Office cleaning</option><option>Kitchen and bathroom</option><option>Custom cleaning</option></select></div>
+<div class="field"><label for="property">Property type *</label><select id="property" name="property" required><option value="">Choose property type</option><option>Apartment / condo</option><option>House</option><option>Office / commercial</option><option>Other</option></select></div>
+<div class="field"><label for="frequency">Preferred frequency</label><select id="frequency" name="frequency"><option value="Not specified">Choose an option</option><option>One-time clean</option><option>Weekly</option><option>Every two weeks</option><option>Monthly</option><option>Not sure yet</option></select></div>
+<div class="field full"><label for="area">City or service area *</label><input id="area" name="area" required placeholder="Your city or neighbourhood"></div>
+<div class="field full"><label for="details">Tell us about your space *</label><textarea id="details" name="details" required placeholder="Number of rooms, areas to focus on, timing, or other details..."></textarea></div>
+<button class="btn btn-green" type="submit">Prepare My Enquiry ↗</button>
+<p class="form-note">Portfolio demo: this form opens your email app with a prepared message. It does not automatically send, store, or notify the business.</p>
+<p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+</form>
+</div>
+</section>
+
+<div class="final-cta">
+<div class="container final-cta-inner">
+<div><h2>A little more clean. A lot more breathing room.</h2><p>Let's find the right cleaning plan for your space.</p></div>
+<a class="btn btn-green" href="#contact">Request Your Quote ↗</a>
+</div>
+</div>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-about">
+<a class="brand" href="#home"><span class="brand-mark">✳</span><span>PureSpace<small>CLEANING CO.</small></span></a>
+<p>Thoughtful cleaning for more comfortable homes and welcoming workspaces. A fresh-space concept designed with care.</p>
+</div>
+<div><h4>Explore</h4><div class="footer-links"><a href="#services">Our Services</a><a href="#about">Our Approach</a><a href="#packages">Cleaning Packages</a><a href="#faq">Frequently Asked Questions</a></div></div>
+<div><h4>Get Started</h4><div class="footer-links"><a href="#contact">Request a Quote</a><a href="#contact">Residential Cleaning</a><a href="#contact">Commercial Cleaning</a><a href="#contact">Custom Enquiry</a></div></div>
+</div>
+<div class="copyright"><span>© <span id="year"></span> PureSpace Cleaning Co. · Fictional portfolio demo</span><a href="#home">Back to top ↑</a></div>
+</div>
+</footer>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+const open = navLinks.classList.toggle('open');
+menuToggle.setAttribute('aria-expanded', String(open));
+menuToggle.textContent = open ? '✕' : '☰';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+link.addEventListener('click', () => {
+navLinks.classList.remove('open');
+menuToggle.setAttribute('aria-expanded', 'false');
+menuToggle.textContent = '☰';
+});
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.getElementById('bookingForm').addEventListener('submit', event => {
+event.preventDefault();
+const form = event.currentTarget;
+if (!form.reportValidity()) return;
+
+const data = new FormData(form);
+const subject = encodeURIComponent('Cleaning Quote Enquiry — ' + data.get('name'));
+const body = encodeURIComponent(
+'PureSpace Cleaning Co. — Website Enquiry\n\n' +
+'Name: ' + data.get('name') + '\n' +
+'Email: ' + data.get('email') + '\n' +
+'Phone: ' + (data.get('phone') || 'Not provided') + '\n' +
+'Service: ' + data.get('service') + '\n' +
+'Property type: ' + data.get('property') + '\n' +
+'Frequency: ' + data.get('frequency') + '\n' +
+'Service area: ' + data.get('area') + '\n\n' +
+'Details:\n' + data.get('details')
+);
+
+document.getElementById('formStatus').textContent =
+'Your email app should open with your enquiry prepared. Review it and press Send to deliver it.';
+window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
+});
+</script>
+</body>
+</html>
